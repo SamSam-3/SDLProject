@@ -7,11 +7,19 @@
 </Signal>
 <Signal id="SIG2" name="snd_pkt">
 </Signal>
+<Signal id="SIG3" name="play">
+</Signal>
 <Item id="ITEM1" type="block" name="Emetteur" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYMB1"/>
 </UsingSymbols>
-<SignalWindow id="SIGWDW2" insideDiagram="TRUE">
+<SignalWindow id="SIGWDW4" insideDiagram="TRUE">
+<ConnectorReference linkId="LINK1" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG3"/>
+</SentSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW3" insideDiagram="TRUE">
 <ConnectorReference linkId="LINK0" isFrom="TRUE"/>
 <Connections>
 <Connection name="Reseau"/>
@@ -23,7 +31,8 @@
 <SignalReference id="SIG1"/>
 </ReceivedSignals>
 </SignalWindow>
-<Channel name="Em_Side" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW1"/>
+<Channel name="Em_Side" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW1"/>
+<Channel name="Simulation" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
 </Item>
 <Item id="ITEM2" type="process" name="Emetteur" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
@@ -39,6 +48,12 @@
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG2"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW2" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK1" isFrom="TRUE"/>
+<ReceivedSignals>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
