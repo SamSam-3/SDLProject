@@ -3,30 +3,27 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="11340" language="sdl" diagramType="prcs">
-<Signal id="SIG1" name="play">
+<Signal id="SIG1" name="rcv_pkt">
 <UsingSymbols>
-<SymbolReference symbolId="SYM5" usingKind="input"/>
+<SymbolReference symbolId="SYM4" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG2" name="snd_pkt">
 <UsingSymbols>
-<SymbolReference symbolId="SYM9" usingKind="output"/>
-<SymbolReference symbolId="SYM21" usingKind="output"/>
+<SymbolReference symbolId="SYM11" usingKind="output"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG3" name="timeout" isTimer="TRUE">
+<Signal id="SIG3" name="tiemout" isTimer="TRUE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM22" usingKind="output"/>
-<SymbolReference symbolId="SYM10" usingKind="output"/>
-<SymbolReference symbolId="SYM14" usingKind="input"/>
+<SymbolReference symbolId="SYM12" usingKind="output"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG4" name="rcv_pkt">
+<Signal id="SIG4" name="timeout" isTimer="TRUE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM16" usingKind="input"/>
+<SymbolReference symbolId="SYM5" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Item id="ITEM1" type="process" name="Emetteur" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM1" type="process" name="Recepteur" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
 <SignalReference id="SIG2"/>
@@ -34,82 +31,72 @@
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG1"/>
-<SignalReference id="SIG3"/>
 <SignalReference id="SIG4"/>
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="state" name="Playing" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="timer" name="tiemout" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM13"/>
+<SymbolReference symbolId="SYM12"/>
 </DefiningSymbols>
-<UsingSymbols>
-<SymbolReference symbolId="SYM23"/>
-<SymbolReference symbolId="SYM11"/>
-</UsingSymbols>
 </Item>
-<Item id="ITEM11" type="state" name="Win" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM11" type="state" name="Lose" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM15"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM12" type="state" name="Lose" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM12" type="state" name="Win" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM24"/>
+<SymbolReference symbolId="SYM16"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM2" type="variable" name="counter" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM21"/>
-<SymbolReference symbolId="SYM17"/>
-<SymbolReference symbolId="SYM16"/>
-<SymbolReference symbolId="SYM6"/>
-<SymbolReference symbolId="SYM5"/>
-<SymbolReference symbolId="SYM9"/>
-<SymbolReference symbolId="SYM18"/>
+<SymbolReference symbolId="SYM8"/>
+<SymbolReference symbolId="SYM7"/>
+<SymbolReference symbolId="SYM11"/>
+<SymbolReference symbolId="SYM4"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM3" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM7"/>
-<SymbolReference symbolId="SYM19"/>
+<SymbolReference symbolId="SYM9"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM4" type="variable" name="now" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM22"/>
-<SymbolReference symbolId="SYM10"/>
+<SymbolReference symbolId="SYM12"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM5" type="type" name="Integer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM1"/>
+<SymbolReference symbolId="SYM6"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM6" type="variable" name="false" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM20"/>
-<SymbolReference symbolId="SYM8"/>
+<SymbolReference symbolId="SYM10"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM7" type="variable" name="counter" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM1" positions="0,4"/>
+<SymbolReference symbolId="SYM6" positions="0,4"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM8" type="state" name="Ready" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM4"/>
+<SymbolReference symbolId="SYM3"/>
 </DefiningSymbols>
 <UsingSymbols>
-<SymbolReference symbolId="SYM3"/>
-<SymbolReference symbolId="SYM12"/>
+<SymbolReference symbolId="SYM2"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM9" type="timer" name="timeout" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM9" type="state" name="Playing" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM22"/>
-<SymbolReference symbolId="SYM10"/>
+<SymbolReference symbolId="SYM3"/>
 </DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM14"/>
+</UsingSymbols>
 </Item>
 </DictionaryObjects>

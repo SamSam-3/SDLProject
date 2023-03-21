@@ -35,7 +35,7 @@
 </Link>
 
 <Link linkId="LINK1" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>Simulation
+<Text>SimStart
 </Text>
 <Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[play]
@@ -44,7 +44,8 @@
 </Connector>
 <Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.572903225806" endType="midarrow">
 <Text id="1">[]</Text>
-<Text id="2"> </Text>
+<Text id="2"> Simulation
+</Text>
 </Connector>
 <LinkSegment orientation="h" length="-264"/>
 

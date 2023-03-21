@@ -15,6 +15,9 @@
 </UsingSymbols>
 <SignalWindow id="SIGWDW4" insideDiagram="TRUE">
 <ConnectorReference linkId="LINK1" isFrom="FALSE"/>
+<Connections>
+<Connection name="Simulation"/>
+</Connections>
 <SentSignals>
 <SignalReference id="SIG3"/>
 </SentSignals>
@@ -32,7 +35,7 @@
 </ReceivedSignals>
 </SignalWindow>
 <Channel name="Em_Side" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW1"/>
-<Channel name="Simulation" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
+<Channel name="SimStart" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
 </Item>
 <Item id="ITEM2" type="process" name="Emetteur" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
