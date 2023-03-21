@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2 LIFELINEID_3"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="-" text="Emetteur
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="-" text="Recepteur
+(2)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="PROCESS_START" color="-" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM3" identifier="COND1" background="-" text="Ready"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ready" identifier="COND1" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM2" identifier="COND2" background="-" text="Ready"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Ready" identifier="COND2" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" text="play(|{param1|=6|})" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM5" identifier="MSG1" text="play(|{param1|=6|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM9" identifier="MSG2" text="snd_PKT(|{param1|=6|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM11" identifier="COND3" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND3" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM11"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM4" identifier="MSG2" text="snd_PKT(|{param1|=6|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM11" identifier="MSG3" text="snd_ACK(|{param1|=5|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14" identifier="COND4" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND4" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM16" identifier="MSG3" text="snd_ACK(|{param1|=5|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM21" identifier="MSG4" text="snd_PKT(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM22"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM23" identifier="COND5" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND5" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM23"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM4" identifier="MSG4" text="snd_PKT(|{param1|=4|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM11" identifier="MSG5" text="snd_ACK(|{param1|=3|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14" identifier="COND6" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND6" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM16" identifier="MSG5" text="snd_ACK(|{param1|=3|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM21" identifier="MSG6" text="snd_PKT(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM22"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM23" identifier="COND7" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND7" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM23"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM4" identifier="MSG6" text="snd_PKT(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM11" identifier="MSG7" text="snd_ACK(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="TIMER_START" color="-" text="timeout(1)" type="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14" identifier="COND8" background="-" text="Playing"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Playing" identifier="COND8" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\recepteur_proc.rdd*SYM14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM16" identifier="MSG7" text="snd_ACK(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM24" identifier="COND9" background="-" text="Lose"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Lose" identifier="COND9" model_id="PragmaDevStudio:symbol*c:\users\zanpa\desktop\sdlproject\emetteur_proc.rdd*SYM24"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>

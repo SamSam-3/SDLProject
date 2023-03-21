@@ -20,13 +20,13 @@
 <Link linkId="LINK0" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>Em_Side</Text>
 <Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="n" position="-0.0399274047187" endType="midarrow">
-<Text id="1">[rcv_pkt]
+<Text id="1">[snd_PKT]
 </Text>
 <Text id="2">Reseau 
 </Text>
 </Connector>
 <Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
-<Text id="1">[snd_pkt]
+<Text id="1">[snd_ACK]
 </Text>
 <Text id="2"></Text>
 </Connector>
@@ -35,7 +35,7 @@
 </Link>
 
 <Link linkId="LINK1" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>SimStart
+<Text>Simulation
 </Text>
 <Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[play]
@@ -44,7 +44,7 @@
 </Connector>
 <Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.572903225806" endType="midarrow">
 <Text id="1">[]</Text>
-<Text id="2"> Simulation
+<Text id="2">SimStart
 </Text>
 </Connector>
 <LinkSegment orientation="h" length="-264"/>

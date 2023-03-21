@@ -11,9 +11,9 @@
 <Description></Description>
 <Text></Text>
 
-<Symbol symbolId="SYMB3" type="sdlText" xCenter="308" yCenter="88" fixedDimensions="FALSE" width="440" height="66" color="#000000" fillColor="#FFFFFF">
+<Symbol symbolId="SYMB3" type="sdlText" xCenter="308" yCenter="99" fixedDimensions="FALSE" width="440" height="66" color="#000000" fillColor="#FFFFFF">
 <Description></Description>
-<Text>signal play(Integer), snd_pkt(Integer), rcv_pkt(Integer);
+<Text>signal play(Integer), snd_PKT(Integer), snd_ACK(Integer);
 </Text>
 </Symbol>
 
@@ -28,8 +28,8 @@
 </Symbol>
 </Symbol>
 
-<Link linkId="LINK1" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>Simulation
+<Link linkId="LINK2" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>SimStart
 </Text>
 <Connector attachedSymbolId="SYMB4" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[play]
@@ -47,12 +47,12 @@
 <Link linkId="LINK0" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>Reseau</Text>
 <Connector attachedSymbolId="SYMB4" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
-<Text id="1">[snd_pkt]
+<Text id="1">[snd_ACK]
 </Text>
 <Text id="2"></Text>
 </Connector>
 <Connector attachedSymbolId="SYMB5" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
-<Text id="1">[rcv_pkt]
+<Text id="1">[snd_PKT]
 </Text>
 <Text id="2"></Text>
 </Connector>

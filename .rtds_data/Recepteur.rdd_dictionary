@@ -3,9 +3,9 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="11340" language="none" diagramType="blk">
-<Signal id="SIG1" name="snd_pkt">
+<Signal id="SIG1" name="snd_ACK">
 </Signal>
-<Signal id="SIG2" name="rcv_pkt">
+<Signal id="SIG2" name="snd_PKT">
 </Signal>
 <Item id="ITEM1" type="block" name="Recepteur" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
@@ -13,6 +13,9 @@
 </UsingSymbols>
 <SignalWindow id="SIGWDW2" insideDiagram="TRUE">
 <ConnectorReference linkId="LINK0" isFrom="FALSE"/>
+<Connections>
+<Connection name="Reseau"/>
+</Connections>
 <SentSignals>
 <SignalReference id="SIG2"/>
 </SentSignals>

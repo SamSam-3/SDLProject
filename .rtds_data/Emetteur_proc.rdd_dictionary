@@ -8,7 +8,7 @@
 <SymbolReference symbolId="SYM5" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG2" name="snd_pkt">
+<Signal id="SIG2" name="snd_PKT">
 <UsingSymbols>
 <SymbolReference symbolId="SYM9" usingKind="output"/>
 <SymbolReference symbolId="SYM21" usingKind="output"/>
@@ -21,7 +21,7 @@
 <SymbolReference symbolId="SYM14" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG4" name="rcv_pkt">
+<Signal id="SIG4" name="snd_ACK">
 <UsingSymbols>
 <SymbolReference symbolId="SYM16" usingKind="input"/>
 </UsingSymbols>

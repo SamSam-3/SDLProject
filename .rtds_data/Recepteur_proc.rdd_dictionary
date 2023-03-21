@@ -3,23 +3,19 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="11340" language="sdl" diagramType="prcs">
-<Signal id="SIG1" name="rcv_pkt">
+<Signal id="SIG1" name="snd_PKT">
 <UsingSymbols>
 <SymbolReference symbolId="SYM4" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG2" name="snd_pkt">
+<Signal id="SIG2" name="snd_ACK">
 <UsingSymbols>
 <SymbolReference symbolId="SYM11" usingKind="output"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG3" name="tiemout" isTimer="TRUE">
+<Signal id="SIG3" name="timeout" isTimer="TRUE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM12" usingKind="output"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG4" name="timeout" isTimer="TRUE">
-<UsingSymbols>
 <SymbolReference symbolId="SYM5" usingKind="input"/>
 </UsingSymbols>
 </Signal>
@@ -31,11 +27,11 @@
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG1"/>
-<SignalReference id="SIG4"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="timer" name="tiemout" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="timer" name="timeout" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM12"/>
 </DefiningSymbols>

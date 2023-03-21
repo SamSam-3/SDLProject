@@ -3,9 +3,9 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="11340" language="none" diagramType="blk">
-<Signal id="SIG1" name="rcv_pkt">
+<Signal id="SIG1" name="snd_PKT">
 </Signal>
-<Signal id="SIG2" name="snd_pkt">
+<Signal id="SIG2" name="snd_ACK">
 </Signal>
 <Signal id="SIG3" name="play">
 </Signal>
@@ -16,7 +16,7 @@
 <SignalWindow id="SIGWDW4" insideDiagram="TRUE">
 <ConnectorReference linkId="LINK1" isFrom="FALSE"/>
 <Connections>
-<Connection name="Simulation"/>
+<Connection name="SimStart"/>
 </Connections>
 <SentSignals>
 <SignalReference id="SIG3"/>
@@ -35,7 +35,7 @@
 </ReceivedSignals>
 </SignalWindow>
 <Channel name="Em_Side" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW1"/>
-<Channel name="SimStart" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
+<Channel name="Simulation" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW4"/>
 </Item>
 <Item id="ITEM2" type="process" name="Emetteur" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
