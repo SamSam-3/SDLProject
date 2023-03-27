@@ -4,7 +4,7 @@
 
 <SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
 <SdlFSMPartition name="" needs_cleanup="FALSE">
-<SdlFSMSymbol identifier="SYM5" type="sdlText" text="dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="206 70" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM5" type="sdlText" text="dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="206 70" dimensions="160 40" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="98 163">
 <SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="128 178" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
@@ -12,19 +12,33 @@
 </Transition>
 </NonStateTransition>
 <StateTransitionBlock top_left_coordinates="249 149">
-<SdlFSMSymbol identifier="SYM3" type="sdlState" text="Ready, Playing" outline_color="-" background_color="-" center_coordinates="318 169" dimensions="118 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM3" type="sdlState" text="Ready, Playing" outline_color="-" background_color="-" center_coordinates="315 169" dimensions="118 40" attached_symbol_id=""/>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="em_PKT(counter)" outline_color="-" background_color="-" center_coordinates="318 221" dimensions="130 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="em_PKT(counter)" outline_color="-" background_color="-" center_coordinates="315 221" dimensions="124 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM7" type="sdlSendSig" text="res_PKT(counter)" outline_color="-" background_color="-" center_coordinates="318 273" dimensions="138 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM8" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="318 325" dimensions="74 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM7" type="sdlSendSig" text="res_PKT(counter)" outline_color="-" background_color="-" center_coordinates="315 273" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM8" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="315 325" dimensions="68 40" attached_symbol_id=""/>
 </Transition>
 </NormalStateTransition>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM6" type="sdlInputSig" text="rcv_ACK(counter)" outline_color="-" background_color="-" center_coordinates="479 221" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM6" type="sdlInputSig" text="rcv_ACK(counter)" outline_color="-" background_color="-" center_coordinates="457 221" dimensions="132 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM9" type="sdlSendSig" text="res_ACK(counter)" outline_color="-" background_color="-" center_coordinates="479 273" dimensions="138 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM10" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="479 325" dimensions="74 40" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM15" type="sdlDecision" text="counter /= 36" outline_color="-" background_color="-" center_coordinates="457 273" dimensions="110 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM16" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="457 325" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM17" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="531 325" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM18" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="531 377" dimensions="68 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+<SdlFSMSymbol identifier="SYM9" type="sdlSendSig" text="res_ACK(counter)" outline_color="-" background_color="-" center_coordinates="457 441" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM10" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="457 493" dimensions="68 40" attached_symbol_id=""/>
 </Transition>
 </NormalStateTransition>
 </StateTransitionBlock>

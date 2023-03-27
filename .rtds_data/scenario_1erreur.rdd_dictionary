@@ -12,17 +12,19 @@
 <SymbolReference symbolId="LIFELINEID_1"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM3" type="process" name="Recepteur" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM3" type="process" name="Reseau" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
 <AlternateType type="block"/>
 <UsingSymbols>
 <SymbolReference symbolId="LIFELINEID_2"/>
+<SymbolReference symbolId="LIFELINEID_3"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM4" type="process" name="Reseau" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM4" type="process" name="Recepteur" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
 <AlternateType type="block"/>
 <UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_2"/>
 <SymbolReference symbolId="LIFELINEID_3"/>
 </UsingSymbols>
 </Item>

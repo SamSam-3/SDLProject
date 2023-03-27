@@ -7,6 +7,7 @@
 <UsingSymbols>
 <SymbolReference symbolId="SYM3" usingKind="output"/>
 <SymbolReference symbolId="SYM30" usingKind="output"/>
+<SymbolReference symbolId="SYM56" usingKind="output"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG2" name="res_ACK">
@@ -14,42 +15,110 @@
 <SymbolReference symbolId="SYM6" usingKind="input"/>
 </UsingSymbols>
 </Signal>
+<Signal id="SIG3" name="pck_time" isTimer="TRUE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM81" usingKind="output"/>
+<SymbolReference symbolId="SYM54" usingKind="input"/>
+</UsingSymbols>
+</Signal>
 <Item id="ITEM1" type="process" name="Emetteur" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
 <SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="variable" name="incrementer" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="variable" name="nb_pkt" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM65"/>
+<SymbolReference symbolId="SYM48"/>
+<SymbolReference symbolId="SYM70"/>
+<SymbolReference symbolId="SYM80"/>
+<SymbolReference symbolId="SYM47"/>
+<SymbolReference symbolId="SYM25"/>
+<SymbolReference symbolId="SYM22"/>
+<SymbolReference symbolId="SYM58"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM11" type="variable" name="false" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM67"/>
+<SymbolReference symbolId="SYM83"/>
+<SymbolReference symbolId="SYM50"/>
+<SymbolReference symbolId="SYM24"/>
+<SymbolReference symbolId="SYM29"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM12" type="variable" name="seuil_verif" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM82"/>
+<SymbolReference symbolId="SYM65"/>
+<SymbolReference symbolId="SYM83"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM13" type="variable" name="seuil_verif" parentId="ITEM1" scope="none" variableTypeName="Boolean" variableTypeId="ITEM2" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM14" positions="3,4"/>
+<SymbolReference symbolId="SYM14" positions="6,4"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM11" type="variable" name="n_seq" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM14" type="variable" name="nb_ACK" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM14" positions="0,4"/>
+<SymbolReference symbolId="SYM14" positions="2,4"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM12" type="variable" name="nb_pkt" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM15" type="variable" name="nb_pkt" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM14" positions="1,4"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM13" type="state" name="Playing" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM16" type="variable" name="n_seq" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM14" positions="0,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM17" type="variable" name="MAX_PKT" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM14" positions="4,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM18" type="variable" name="seuil" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM14" positions="5,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM19" type="variable" name="incrementer" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM5" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM14" positions="3,4"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM2" type="type" name="Boolean" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM14"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM20" type="state" name="Playing" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM5"/>
 </DefiningSymbols>
 <UsingSymbols>
 <SymbolReference symbolId="SYM53"/>
 <SymbolReference symbolId="SYM36"/>
+<SymbolReference symbolId="SYM57"/>
+<SymbolReference symbolId="SYM73"/>
 <SymbolReference symbolId="SYM4"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM14" type="connector" name="Loop" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM21" type="timer" name="pck_time" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM81"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM22" type="connector" name="Loop" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM39"/>
 </DefiningSymbols>
@@ -57,13 +126,14 @@
 <SymbolReference symbolId="SYM40"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM15" type="state" name="FinTransmission" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM23" type="state" name="FinTransmission" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM32"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM2" type="variable" name="n_seq" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM3" type="variable" name="n_seq" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
+<SymbolReference symbolId="SYM56"/>
 <SymbolReference symbolId="SYM30"/>
 <SymbolReference symbolId="SYM26"/>
 <SymbolReference symbolId="SYM27"/>
@@ -72,51 +142,49 @@
 <SymbolReference symbolId="SYM6"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM3" type="type" name="Integer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM4" type="variable" name="seuil" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM80"/>
+<SymbolReference symbolId="SYM64"/>
+<SymbolReference symbolId="SYM65"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM5" type="type" name="Integer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM14"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM4" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM6" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
+<SymbolReference symbolId="SYM66"/>
 <SymbolReference symbolId="SYM23"/>
 <SymbolReference symbolId="SYM28"/>
+<SymbolReference symbolId="SYM82"/>
 <SymbolReference symbolId="SYM49"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM5" type="variable" name="incrementer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM7" type="variable" name="incrementer" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM22"/>
 <SymbolReference symbolId="SYM21"/>
-<SymbolReference symbolId="SYM41"/>
+<SymbolReference symbolId="SYM60"/>
 <SymbolReference symbolId="SYM37"/>
+<SymbolReference symbolId="SYM69"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM6" type="variable" name="nb_ACK" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM8" type="variable" name="nb_ACK" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM52"/>
+<SymbolReference symbolId="SYM59"/>
+<SymbolReference symbolId="SYM79"/>
 <SymbolReference symbolId="SYM51"/>
 <SymbolReference symbolId="SYM48"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM7" type="variable" name="nb_pkt" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM9" type="variable" name="MAX_PKT" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM22"/>
-<SymbolReference symbolId="SYM47"/>
-<SymbolReference symbolId="SYM48"/>
-<SymbolReference symbolId="SYM25"/>
+<SymbolReference symbolId="SYM62"/>
+<SymbolReference symbolId="SYM27"/>
 </UsingSymbols>
-</Item>
-<Item id="ITEM8" type="variable" name="false" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<UsingSymbols>
-<SymbolReference symbolId="SYM29"/>
-<SymbolReference symbolId="SYM50"/>
-<SymbolReference symbolId="SYM24"/>
-</UsingSymbols>
-</Item>
-<Item id="ITEM9" type="variable" name="nb_ACK" parentId="ITEM1" scope="none" variableTypeName="Integer" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYM14" positions="2,4"/>
-</DefiningSymbols>
 </Item>
 </DictionaryObjects>

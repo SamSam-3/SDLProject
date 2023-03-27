@@ -4,7 +4,7 @@
 
 <SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
 <SdlFSMPartition name="" needs_cleanup="FALSE">
-<SdlFSMSymbol identifier="SYM1" type="sdlText" text="dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="138 96" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM1" type="sdlText" text="dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="138 96" dimensions="160 40" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="80 180">
 <SdlFSMSymbol identifier="SYM2" type="sdlStart" outline_color="-" background_color="-" center_coordinates="110 195" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
