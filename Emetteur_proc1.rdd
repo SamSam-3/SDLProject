@@ -4,34 +4,73 @@
 
 <SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
 <SdlFSMPartition name="" needs_cleanup="FALSE">
-<SdlFSMSymbol identifier="SYM14" type="sdlText" text="dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="344 115" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM14" type="sdlText" text="dcl n_seq Integer;
+dcl nb_pkt Integer;
+dcl nb_ACK Integer;
+dcl incrementer Integer;" outline_color="-" background_color="-" center_coordinates="364 139" dimensions="188 76" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="135 232">
-<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="200 247" dimensions="60 30" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="201 247" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM2" type="sdlTask" text="counter := 0" outline_color="-" background_color="-" center_coordinates="200 294" dimensions="110 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM3" type="sdlSendSig" text="em_PKT(counter)" outline_color="-" background_color="-" center_coordinates="200 346" dimensions="130 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM4" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="200 398" dimensions="74 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM2" type="sdlTask" text="n_seq := 0" outline_color="-" background_color="-" center_coordinates="201 294" dimensions="90 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM25" type="sdlTask" text="nb_pkt := 1" outline_color="-" background_color="-" center_coordinates="201 346" dimensions="96 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM21" type="sdlTask" text="incrementer := 0" outline_color="-" background_color="-" center_coordinates="201 398" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM51" type="sdlTask" text="nb_ACK := 0" outline_color="-" background_color="-" center_coordinates="201 450" dimensions="96 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM3" type="sdlSendSig" text="em_PKT(n_seq)" outline_color="-" background_color="-" center_coordinates="201 502" dimensions="110 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM4" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="201 554" dimensions="68 40" attached_symbol_id=""/>
 </Transition>
 </NonStateTransition>
-<StateTransitionBlock top_left_coordinates="320 202">
-<SdlFSMSymbol identifier="SYM5" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="403 222" dimensions="68 40" attached_symbol_id=""/>
+<StateTransitionBlock top_left_coordinates="440 318">
+<SdlFSMSymbol identifier="SYM5" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="551 338" dimensions="68 40" attached_symbol_id=""/>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM6" type="sdlInputSig" text="res_ACK(counter)" outline_color="-" background_color="-" center_coordinates="403 274" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM6" type="sdlInputSig" text="res_ACK(n_seq)" outline_color="-" background_color="-" center_coordinates="551 390" dimensions="118 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM7" type="sdlTask" text="counter := counter +1" outline_color="-" background_color="-" center_coordinates="403 326" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM52" type="sdlTask" text="nb_ACK := nb_ACK + 1" outline_color="-" background_color="-" center_coordinates="551 442" dimensions="160 40" attached_symbol_id=""/>
 <DecisionBlock>
-<SdlFSMSymbol identifier="SYM8" type="sdlDecision" text="counter &lt; 10" outline_color="-" background_color="-" center_coordinates="403 378" dimensions="110 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM48" type="sdlDecision" text="nb_ACK = nb_pkt" outline_color="-" background_color="-" center_coordinates="551 494" dimensions="124 40" attached_symbol_id=""/>
 <DecisionBranch>
-<SdlFSMSymbol identifier="SYM9" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="403 430" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM49" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="551 546" dimensions="60 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM11" type="sdlSendSig" text="em_PKT(counter)" outline_color="-" background_color="-" center_coordinates="403 482" dimensions="124 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM12" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="403 534" dimensions="68 40" attached_symbol_id=""/>
 </Transition>
 </DecisionBranch>
 <DecisionBranch>
-<SdlFSMSymbol identifier="SYM10" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="537 430" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM50" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="625 546" dimensions="60 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM13" type="sdlState" text="FinTransmission" outline_color="-" background_color="-" center_coordinates="537 482" dimensions="124 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM53" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="625 598" dimensions="68 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+<SdlFSMSymbol identifier="SYM39" type="sdlCnctrIn" text="Loop" outline_color="-" background_color="-" center_coordinates="551 662" dimensions="110 40" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM22" type="sdlDecision" text="incrementer &lt; nb_pkt" outline_color="-" background_color="-" center_coordinates="551 714" dimensions="160 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM23" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="551 766" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM26" type="sdlTask" text="n_seq := n_seq +1" outline_color="-" background_color="-" center_coordinates="551 818" dimensions="138 40" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM27" type="sdlDecision" text="n_seq &lt; 10" outline_color="-" background_color="-" center_coordinates="551 870" dimensions="90 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM28" type="sdlAnswer" text="true" outline_color="-" background_color="-" center_coordinates="551 922" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM30" type="sdlSendSig" text="em_PKT(n_seq)" outline_color="-" background_color="-" center_coordinates="551 974" dimensions="110 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM37" type="sdlTask" text="incrementer := incrementer +1" outline_color="-" background_color="-" center_coordinates="551 1026" dimensions="222 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM40" type="sdlCnctrOut" text="Loop" outline_color="-" background_color="-" center_coordinates="551 1078" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM29" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="734 922" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM32" type="sdlState" text="FinTransmission" outline_color="-" background_color="-" center_coordinates="734 974" dimensions="124 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM24" type="sdlAnswer" text="false" outline_color="-" background_color="-" center_coordinates="886 766" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM41" type="sdlTask" text="incrementer := 0" outline_color="-" background_color="-" center_coordinates="886 818" dimensions="132 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM47" type="sdlTask" text="nb_pkt := nb_pkt * 2" outline_color="-" background_color="-" center_coordinates="886 870" dimensions="160 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM36" type="sdlState" text="Playing" outline_color="-" background_color="-" center_coordinates="886 922" dimensions="68 40" attached_symbol_id=""/>
 </Transition>
 </DecisionBranch>
 </DecisionBlock>
